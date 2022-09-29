@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CalculatorUI"
         mc:Ignorable="d"
         
-    Title="Calculator" Height="361.313" Width="208.941" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" PreviewKeyDown="Window_KeyDownPreview">
+    Title="Calculator" Height="361.313" Width="208.941" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" PreviewKeyDown="WindowKeyDownPreview">
     <Grid HorizontalAlignment="Left" Width="199">
         <Grid.RowDefinitions>
             <RowDefinition/>

@@ -20,15 +20,17 @@ namespace CalculatorUI
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window,IView
+    public partial class MainWindow : Window, IView
     {
         private IPresenter _presenter;
         private IModel _model;
 
-        
+
         public MainWindow()
         {
             InitializeComponent();
+            _model = new Model();
+            _presenter = new Presenter(this, _model);
         }
 
         public string Input
@@ -56,6 +58,13 @@ namespace CalculatorUI
         public void RemoveChar()
         {
             throw new NotImplementedException();
+        }
+
+
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            Console.Write("hey");
         }
     }
 }

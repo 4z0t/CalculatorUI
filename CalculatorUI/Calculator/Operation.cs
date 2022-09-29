@@ -22,16 +22,22 @@ namespace Calculator
 
         public static int GetOperationPriority(Operation op)
         {
-            return op switch
+            switch (op)
             {
-                Operation.Divide => 2,
-                Operation.Multiply => 2,
-                Operation.Plus => 1,
-                Operation.Minus => 1,
-                Operation.Open => 0,
-                Operation.Close => 0,
-                Operation.Power => 3,
-                _ => throw new ArgumentException("Unknow operation")
+
+                case Operation.Divide:
+                case Operation.Multiply:
+                    return 2;
+                case Operation.Plus:
+                case Operation.Minus:
+                    return 1;
+                case Operation.Open:
+                case Operation.Close:
+                    return 0;
+                case Operation.Power:
+                    return 3;
+                default:
+                    throw new ArgumentException("Unknow operation");
             };
         }
 
@@ -42,15 +48,23 @@ namespace Calculator
 
         public static double DoOperation(Operation op, double a, double b)
         {
-            return op switch
+            switch (op)
             {
-                Operation.Divide => a / b,
-                Operation.Multiply => a * b,
-                Operation.Plus => a + b,
-                Operation.Minus => a - b,
-                Operation.Power => Math.Pow(a, b),
-                _ => throw new ArgumentException("Illegal operation"),
-            };
+
+
+                case Operation.Plus:
+                    return a + b;
+                case Operation.Minus:
+                    return a - b;
+                case Operation.Divide:
+                    return a / b;
+                case Operation.Multiply:
+                    return a * b;
+                case Operation.Power:
+                    return Math.Pow(a, b);
+                default:
+                    throw new ArgumentException("Illegal operation");
+            }
         }
 
     }
