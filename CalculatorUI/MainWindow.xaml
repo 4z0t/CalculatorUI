@@ -31,9 +31,9 @@
         <Button x:Name="Multiply" Content="×" HorizontalAlignment="Left" Margin="148,137.717,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="18"  Click="ButtonOperand" Grid.Row="1"/>
         <Button x:Name="Equals" Content="=" HorizontalAlignment="Left" Margin="103,273,0,0" VerticalAlignment="Top" Width="85" Height="40" FontSize="18" Click="ButtonEquals" Grid.Row="1"/>
         <Button x:Name="Dot" Content="," HorizontalAlignment="Left" Margin="58,273.717,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="18" Click="ButtonClick" Grid.Row="1"/>
-        <Button x:Name="Clear" Content="C" HorizontalAlignment="Left" Margin="103,92.717,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="18" Click="ClearClick" Grid.Row="1"/>
+        <Button x:Name="Clear" Content="C" HorizontalAlignment="Left" Margin="103,92.717,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="18" Click="ButtonClear" Grid.Row="1"/>
         <Button x:Name="Divide" Content="÷" HorizontalAlignment="Left" Margin="148,92.717,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="18"  Click="ButtonOperand" Grid.Row="1"/>
-        <Button x:Name="Clear_Copy" Content="CE" HorizontalAlignment="Left" Margin="13,92.717,0,0" VerticalAlignment="Top" Width="85" Height="40" FontSize="18" Click="CEClick" Grid.Row="1"/>
+        <Button x:Name="Clear_Copy" Content="CE" HorizontalAlignment="Left" Margin="13,92.717,0,0" VerticalAlignment="Top" Width="85" Height="40" FontSize="18" Click="ButtonClearAll" Grid.Row="1"/>
         <Label x:Name="Equation" Content="" HorizontalAlignment="Left" Margin="12,16.717,0,0" VerticalAlignment="Top" Width="118" Height="31" Grid.Row="1" Language="se-SE"/>
         <Label x:Name="Display" Content="0" Height="71" Margin="10,16.717,0,0" VerticalAlignment="Top" Width="175" HorizontalAlignment="Left" FontSize="22" Language="se-SE" HorizontalContentAlignment="Right" BorderThickness="7,0,0,0" VerticalContentAlignment="Center" Grid.Row="1"/>
 

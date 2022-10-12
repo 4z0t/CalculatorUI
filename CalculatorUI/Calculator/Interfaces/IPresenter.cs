@@ -25,5 +25,7 @@ namespace Calculator.Interfaces
 
         (double, bool) ProcessString(string s);
 
+        void ClearAll();
+
     }
 }

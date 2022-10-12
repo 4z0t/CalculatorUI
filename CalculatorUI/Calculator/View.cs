@@ -18,7 +18,7 @@ namespace Calculator
 
         public void UpdateCursor()
         {
-            (_left, _top) = Console.GetCursorPosition();
+            //(_left, _top) = Console.GetCursorPosition();
         }
         public void DisplayChar(char c)
         {
@@ -55,5 +55,6 @@ namespace Calculator
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, _top + 1);
         }
+        public void ClearAll() { }
     }
 }

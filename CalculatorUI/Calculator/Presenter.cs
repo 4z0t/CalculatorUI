@@ -138,6 +138,12 @@ namespace Calculator
             bool err = _model.Calculate(out double r);
             return (r, err);
         }
+
+        public void ClearAll()
+        {
+            _input = String.Empty;
+            _view.ClearAll();
+        }
     }
 
 }

@@ -17,6 +17,8 @@ namespace Calculator.Interfaces
 
         void RemoveChar();
 
+        void ClearAll();
+
 
 
         
