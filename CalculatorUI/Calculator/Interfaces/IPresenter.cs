@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Calculator.Interfaces
 {
@@ -10,6 +11,8 @@ namespace Calculator.Interfaces
     {
 
         void OnCharInput(char c);
+
+        string Input { get; set; }
 
         bool OnOperatorInput(Operation op);
 

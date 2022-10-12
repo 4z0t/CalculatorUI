@@ -20,8 +20,17 @@ namespace Calculator
             _model = model;
         }
 
+        public string Input
+        {
+            get { return _input; }
+            set
+            {
+                _input = value;
+                _Refresh();
+                OnEnterInput();
+            }
 
-
+        }
 
         public bool OnBracketClose()
         {

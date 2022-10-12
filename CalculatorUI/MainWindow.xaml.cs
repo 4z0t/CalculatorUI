@@ -124,8 +124,7 @@ namespace CalculatorUI
                 return;
             }
             Input = r.ToString();
-            _presenter.OnEnterInput();
-
+            _presenter.Input = String.Copy(Input);
         }
 
         private void WindowKeyDownPreview(object sender, KeyEventArgs e)
@@ -152,6 +151,20 @@ namespace CalculatorUI
                     case Key.NumPad7: c = '7'; break;
                     case Key.NumPad8: c = '8'; break;
                     case Key.NumPad9: c = '9'; break;
+
+                    case Key.D0: c = '0'; break;
+                    case Key.D1: c = '1'; break;
+                    case Key.D2: c = '2'; break;
+                    case Key.D3: c = '3'; break;
+                    case Key.D4: c = '4'; break;
+                    case Key.D5: c = '5'; break;
+                    case Key.D6: c = '6'; break;
+                    case Key.D7: c = '7'; break;
+                    case Key.D8: c = '8'; break;
+                    case Key.D9: c = '9'; break;
+
+                       
+
                     case Key.OemComma: c = '.'; break;
                     case Key.OemPlus: c = '+'; break;
                     case Key.Add: c = '+'; break;
