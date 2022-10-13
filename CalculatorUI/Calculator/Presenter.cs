@@ -12,12 +12,17 @@ namespace Calculator
     {
         private readonly IView _view;
         private readonly IModel _model;
-        private string _input = "";
+        private string _input = string.Empty;
 
         public Presenter(IView view, IModel model)
         {
             _view = view;
             _model = model;
+        }
+
+        public Presenter()
+        {
+
         }
 
         public string Input
@@ -30,6 +35,21 @@ namespace Calculator
                 OnEnterInput();
             }
 
+        }
+
+
+
+        private string _outPut = string.Empty;
+        public string Output
+        {
+            get
+            {
+                return _outPut;
+            }
+            set
+            {
+                _outPut = value;
+            }
         }
 
         public bool OnBracketClose()

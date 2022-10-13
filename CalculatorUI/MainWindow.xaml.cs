@@ -28,12 +28,14 @@ namespace CalculatorUI
 
         public MainWindow()
         {
+
             InitializeComponent();
             _model = new Model();
             _presenter = new Presenter(this, _model);
         }
 
-        private string _inPut;
+
+        private string _inPut = string.Empty;
         public string Input
         {
             get { return _inPut; }
@@ -45,7 +47,7 @@ namespace CalculatorUI
         }
 
 
-        private string _outPut;
+        private string _outPut = string.Empty;
         public string Output
         {
             get
@@ -81,13 +83,13 @@ namespace CalculatorUI
         }
 
 
-        private void ButtonClick(object sender, RoutedEventArgs e)
+        public void ButtonClick(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             _presenter.OnCharInput(btn.Content.ToString()[0]);
         }
 
-        private void ButtonOperand(object sender, RoutedEventArgs e)
+        public void ButtonOperand(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             char op = ' ';
@@ -102,13 +104,13 @@ namespace CalculatorUI
 
             _presenter.OnCharInput(op);
         }
-        private void ButtonClear(object sender, RoutedEventArgs e)
+        public void ButtonClear(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             _presenter.OnBackspace();
         }
 
-        private void ButtonClearAll(object sender, RoutedEventArgs e)
+        public void ButtonClearAll(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             _presenter.ClearAll();
@@ -116,7 +118,7 @@ namespace CalculatorUI
         }
 
 
-        private void ButtonEquals(object sender, RoutedEventArgs e)
+        public void ButtonEquals(object sender, RoutedEventArgs e)
         {
             (double r, bool err) = _presenter.ProcessString(Input);
             if (err)
@@ -127,11 +129,13 @@ namespace CalculatorUI
             _presenter.Input = String.Copy(Input);
         }
 
-        private void WindowKeyDownPreview(object sender, KeyEventArgs e)
+        public void WindowKeyDownPreview(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
-                _presenter.OnEnterInput();
-            else if (e.Key == Key.Back)
+            {
+                ButtonEquals(sender, e);
+            }
+            else if (e.Key == Key.Back || e.Key == Key.Delete)
             {
 
                 _presenter.OnBackspace();
@@ -163,7 +167,7 @@ namespace CalculatorUI
                     case Key.D8: c = '8'; break;
                     case Key.D9: c = '9'; break;
 
-                       
+
 
                     case Key.OemComma: c = '.'; break;
                     case Key.OemPlus: c = '+'; break;
@@ -172,6 +176,11 @@ namespace CalculatorUI
                     case Key.Subtract: c = '-'; break;
                     case Key.Multiply: c = '*'; break;
                     case Key.Divide: c = '/'; break;
+                    case Key.OemPeriod: c = '.'; break;
+                    case Key.Decimal: c = '.'; break;
+
+
+
                     default: return;
                 }
                 _presenter.OnCharInput(c);
