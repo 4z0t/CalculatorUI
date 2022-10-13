@@ -25,6 +25,17 @@ namespace CalculatorUI
         private IPresenter _presenter;
         private IModel _model;
 
+        public IModel Model
+        {
+            get { return _model; }
+            set { _model = value; }
+        }
+
+        public IPresenter Presenter
+        {
+            get { return _presenter; }
+            set { _presenter = value; }
+        }
 
         public MainWindow()
         {
@@ -33,6 +44,7 @@ namespace CalculatorUI
             _model = new Model();
             _presenter = new Presenter(this, _model);
         }
+
 
 
         private string _inPut = string.Empty;
@@ -92,7 +104,7 @@ namespace CalculatorUI
         public void ButtonOperand(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
-            char op = ' ';
+            char op;
             switch (btn.Name)
             {
                 case "Multiply": op = '*'; break;
