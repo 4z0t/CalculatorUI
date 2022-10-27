@@ -94,11 +94,53 @@ namespace CalculatorUI
             Input = Input.Remove(Input.Length - 1);
         }
 
+        public static string CharToName(char c)
+        {
+            switch (c)
+            {
+
+                case '0': return "Zero";
+                case '1': return "One";
+                case '2': return "Two";
+                case '3': return "Three";
+                case '4': return "Four";
+                case '5': return "Five";
+                case '6': return "Six";
+                case '7': return "Seven";
+                case '8': return "Eight";
+                case '9': return "Nine";
+                case '.': return "Dot";
+                case ',': return "Dot";
+                default:
+                    throw new ArgumentException("Unknown char");
+            }
+        }
+        public static char NameToChar(string name)
+        {
+            switch (name)
+            {
+                case "Zero": return '0';
+                case "One": return '1';
+                case "Two": return '2';
+                case "Three": return '3';
+                case "Four": return '4';
+                case "Five": return '5';
+                case "Six": return '6';
+                case "Seven": return '7';
+                case "Eight": return '8';
+                case "Nine": return '9';
+                case "Dot": return '.';
+
+                default:
+                    throw new ArgumentException("Unknown name " + name);
+            }
+
+        }
 
         public void ButtonClick(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
-            _presenter.OnCharInput(btn.Content.ToString()[0]);
+            _presenter.OnCharInput(NameToChar(btn.Name.ToString()));
         }
 
         public void ButtonOperand(object sender, RoutedEventArgs e)

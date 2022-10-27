@@ -7,6 +7,7 @@ using Moq;
 using Calculator.Interfaces;
 using Calculator;
 using SpecFlow.Internal;
+using TechTalk.SpecFlow.CommonModels;
 
 
 namespace UnitTestProject1
@@ -149,6 +150,18 @@ namespace UnitTestProject1
             var btn = (Button)window.FindName(name);
             btn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             moqPresenter.Verify(m => m.OnCharInput(It.Is<char>(i => i == c)), Times.Once());
+        }
+
+        [DataTestMethod]
+        [DataRow("1+1", 2)]
+        [DataRow("2-1", 1)]
+        [DataRow("2*2", 4)]
+        [DataRow("2.5+3.6", 6.1)]
+        public void TestOperationOn2Numbers(string input, double expected)
+        {
+            window.Input=input;
+            window.ButtonEquals(window, new RoutedEventArgs(Button.ClickEvent));
+            Assert.AreEqual(expected.ToString(),window.Output);
         }
     }
 }
