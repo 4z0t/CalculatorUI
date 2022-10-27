@@ -1,5 +1,5 @@
 ﻿Feature: Calculator
-	Simple calculator for adding two numbers
+	Calculator
 
 @positive
 Scenario: Do number action
@@ -12,8 +12,27 @@ Scenario: Do number action
 Examples: 
 | firstValue | secondValue | action   | result |
 | 2.5        | 3.6         | Plus     | 6.1    |
+| 2.5        | 3           | Minus    | -0.5   |
 | 2.5        | 3           | Multiply | 7.5    |
+| 2.5        | 2           | Divide   | 1.25   |
 | 1          | 2           | Plus     | 3      |
 | 2          | 3           | Minus    | -1     |
 | 2          | 2           | Multiply | 4      |
 | 2          | 2           | Divide   | 1      |
+
+Scenario: Wrong input
+	Given Calculator is initialized
+	When I type number <firstValue>
+	And I press <action>
+	Then the error is on screen
+	
+Examples: 
+| firstValue | action   |
+| 2.5        | Plus     |
+| 2.5        | Minus    |
+| 2.5        | Multiply |
+| 2.5        | Divide   |
+| 1          | Plus     |
+| 2          | Minus    |
+| 2          | Multiply |
+| 2          | Divide   |

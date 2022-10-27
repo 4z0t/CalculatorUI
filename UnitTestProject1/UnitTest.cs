@@ -159,9 +159,9 @@ namespace UnitTestProject1
         [DataRow("2.5+3.6", 6.1)]
         public void TestOperationOn2Numbers(string input, double expected)
         {
-            window.Input=input;
+            window.Input = input;
             window.ButtonEquals(window, new RoutedEventArgs(Button.ClickEvent));
-            Assert.AreEqual(expected.ToString(),window.Output);
+            Assert.AreEqual(expected.ToString(), window.Output);
         }
     }
 }

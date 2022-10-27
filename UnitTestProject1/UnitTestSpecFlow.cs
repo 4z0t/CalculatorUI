@@ -77,6 +77,11 @@ namespace UnitTestProject1
             Assert.AreEqual(expected.ToString(), ((Label)window.FindName("Display")).Content.ToString());
         }
 
+        [Then("the error is on screen")]
+        public void Error()
+        {
+            Assert.AreEqual("Error", ((Label)window.FindName("Display")).Content.ToString());
+        }
 
     }
 }
