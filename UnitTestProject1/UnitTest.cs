@@ -11,7 +11,7 @@ using SpecFlow.Internal;
 
 namespace UnitTestProject1
 {
-    
+
     [TestClass]
     public class UnitTest
     {
@@ -130,8 +130,8 @@ namespace UnitTestProject1
             btn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             moqPresenter.Verify(m => m.ClearAll(), Times.Once());
         }
-        
-        
+
+
         [DataTestMethod]
         [DataRow("Plus", '+')]
         [DataRow("Minus", '-')]
