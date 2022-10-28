@@ -111,6 +111,7 @@ namespace CalculatorUI
                 case '9': return "Nine";
                 case '.': return "Dot";
                 case ',': return "Dot";
+                case '-': return "Minus";
                 default:
                     throw new ArgumentException("Unknown char");
             }
@@ -130,6 +131,7 @@ namespace CalculatorUI
                 case "Eight": return '8';
                 case "Nine": return '9';
                 case "Dot": return '.';
+                case "Minus": return '-';
 
                 default:
                     throw new ArgumentException("Unknown name " + name);

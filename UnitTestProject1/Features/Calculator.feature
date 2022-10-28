@@ -20,6 +20,8 @@ Examples:
 | 2          | 2           | Multiply | 4      |
 | 2          | 2           | Divide   | 1      |
 
+
+@negative
 Scenario: Wrong input
 	Given Calculator is initialized
 	When I type number <firstValue>
@@ -36,3 +38,21 @@ Examples:
 | 2          | Minus    |
 | 2          | Multiply |
 | 2          | Divide   |
+
+@negative 
+Scenario: Zero division
+	Given Calculator is initialized
+	When I type number <number>
+	And I press Divide
+	And I type number 0
+	Then the error is on screen
+
+	Examples: 
+| number	 | 
+| 2.5        | 
+| 0	         | 
+| 0.7        | 
+| 0.5        | 
+| 1          |  
+| -2         | 
+| 2          | 
