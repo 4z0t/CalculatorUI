@@ -20,27 +20,6 @@ namespace UnitTestProject1
 
     class SpecFlowTest
     {
-        public string CharToName(char c)
-        {
-            switch (c)
-            {
-
-                case '0': return "Zero";
-                case '1': return "One";
-                case '2': return "Two";
-                case '3': return "Three";
-                case '4': return "Four";
-                case '5': return "Five";
-                case '6': return "Six";
-                case '7': return "Seven";
-                case '8': return "Eight";
-                case '9': return "Nine";
-                case '.': return "Dot";
-                case ',': return "Dot";
-                default:
-                    throw new ArgumentException("Unknown char");
-            }
-        }
 
         MainWindow window;
 
@@ -66,7 +45,7 @@ namespace UnitTestProject1
         {
             foreach (char c in number.ToString())
             {
-                var btn = (Button)window.FindName(CharToName(c));
+                var btn = (Button)window.FindName(MainWindow.CharToName(c));
                 btn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             }
         }
