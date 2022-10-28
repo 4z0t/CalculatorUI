@@ -153,10 +153,13 @@ namespace UnitTestProject1
         }
 
         [DataTestMethod]
+        [DataRow("2.5-3.6", -1.1)]
         [DataRow("1+1", 2)]
         [DataRow("2-1", 1)]
         [DataRow("2*2", 4)]
         [DataRow("2.5+3.6", 6.1)]
+        [DataRow("2.5*3", 7.5)]
+        [DataRow("2.5/2", 2.5 / 2)]
         public void TestOperationOn2Numbers(string input, double expected)
         {
             window.Input = input;
