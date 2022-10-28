@@ -150,6 +150,7 @@ namespace Calculator
                         return true;
 
                     double d1 = nums.Pop();
+                    if (nums.Count == 0) return true;
                     double d2 = nums.Pop();
 
                     nums.Push(OperationFunctions.DoOperation(op, d2, d1));
